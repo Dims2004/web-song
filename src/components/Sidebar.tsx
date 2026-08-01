@@ -14,7 +14,7 @@ interface SidebarProps {
 
 export function Sidebar({ view, onChangeView, onOpenSettings, connectionStatus, songCount }: SidebarProps) {
   return (
-    <aside className="flex h-full w-60 shrink-0 flex-col justify-between bg-black p-4">
+    <aside className="hidden h-full w-60 shrink-0 flex-col justify-between bg-black p-4 md:flex">
       <div>
         <div className="mb-6 flex items-center gap-2 px-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-black font-bold">

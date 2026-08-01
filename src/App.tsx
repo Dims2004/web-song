@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import { Sidebar, type ViewKey } from './components/Sidebar';
+import { MobileNavBar } from './components/MobileNavBar';
 import { PlaylistView } from './components/PlaylistView';
 import { HealthDashboard } from './components/HealthDashboard';
 import { NowPlayingBar } from './components/NowPlayingBar';
@@ -67,6 +68,8 @@ export default function App() {
         onSeek={player.seek}
         onVolumeChange={player.setVolume}
       />
+
+      <MobileNavBar view={view} onChangeView={setView} onOpenSettings={() => setSettingsOpen(true)} />
 
       {settingsOpen && (
         <SettingsModal

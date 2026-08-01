@@ -45,15 +45,15 @@ export function PlaylistView({
   }
 
   return (
-    <div className="px-6 py-6">
-      <div className="mb-6 flex items-end gap-6 rounded-lg bg-gradient-to-b from-app-surface-3 to-app-bg p-6">
-        <div className="flex h-40 w-40 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-brand to-app-surface-3 text-6xl shadow-lg">
+    <div className="px-3 py-4 sm:px-6 sm:py-6">
+      <div className="mb-4 flex flex-col items-center gap-4 rounded-lg bg-gradient-to-b from-app-surface-3 to-app-bg p-4 text-center sm:mb-6 sm:flex-row sm:items-end sm:gap-6 sm:p-6 sm:text-left">
+        <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-brand to-app-surface-3 text-4xl shadow-lg sm:h-40 sm:w-40 sm:text-6xl">
           🎧
         </div>
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-app-subtext">Playlist</p>
-          <h1 className="mb-2 text-4xl font-extrabold">Sensor Beats</h1>
-          <p className="text-sm text-app-subtext">
+          <h1 className="mb-2 text-2xl font-extrabold sm:text-4xl">Sensor Beats</h1>
+          <p className="text-xs text-app-subtext sm:text-sm">
             Diputar di web, statusnya dikirim real-time ke layar OLED ESP32 lewat MQTT.
           </p>
         </div>
@@ -71,7 +71,7 @@ export function PlaylistView({
           setIsDragOver(false);
           if (e.dataTransfer.files?.length) onAddSongs(e.dataTransfer.files);
         }}
-        className={`mb-6 flex cursor-pointer items-center justify-center gap-3 rounded-lg border-2 border-dashed p-5 text-sm transition ${
+        className={`mb-4 flex cursor-pointer flex-col items-center gap-2 rounded-lg border-2 border-dashed p-4 text-center text-sm transition sm:mb-6 sm:flex-row sm:justify-center sm:gap-3 sm:p-5 sm:text-left ${
           isDragOver
             ? 'border-brand bg-brand/10 text-brand'
             : 'border-app-border text-app-subtext hover:border-app-subtext hover:text-app-text'
@@ -95,12 +95,12 @@ export function PlaylistView({
         />
       </div>
 
-      <div className="mb-2 flex items-center gap-2 rounded-lg border border-app-border p-3">
+      <div className="mb-2 flex flex-col gap-2 rounded-lg border border-app-border p-3 sm:flex-row sm:items-center">
         <input
           type="text"
           value={ytUrl}
           onChange={(e) => setYtUrl(e.target.value)}
-          placeholder="Tempel link YouTube (mis. https://youtube.com/watch?v=...)"
+          placeholder="Tempel link YouTube..."
           className="min-w-0 flex-1 rounded-md bg-app-surface-2 px-3 py-2 text-sm text-app-text outline-none placeholder:text-app-subtext"
         />
         <button
@@ -113,7 +113,7 @@ export function PlaylistView({
       </div>
       {ytError && <p className="mb-4 text-xs text-red-400">{ytError}</p>}
 
-      <div className="grid grid-cols-[2rem_1fr_auto_auto_auto] gap-4 border-b border-app-border px-3 pb-2 text-xs uppercase text-app-subtext">
+      <div className="grid grid-cols-[2rem_1fr_auto_auto_auto] gap-2 border-b border-app-border px-2 pb-2 text-xs uppercase text-app-subtext sm:gap-4 sm:px-3">
         <span>#</span>
         <span>Judul</span>
         <span />

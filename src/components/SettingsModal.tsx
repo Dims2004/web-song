@@ -25,7 +25,7 @@ export function SettingsModal({ settings, status, error, onClose, onSave, onConn
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
-      <div className="w-full max-w-md rounded-xl bg-app-surface-2 p-6 shadow-2xl">
+      <div className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-xl bg-app-surface-2 p-6 shadow-2xl">
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-lg font-bold">Pengaturan MQTT</h2>
           <button onClick={onClose} className="text-app-subtext hover:text-app-text">

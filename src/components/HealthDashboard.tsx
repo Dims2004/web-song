@@ -24,7 +24,7 @@ export function HealthDashboard({ sensor, bpmHistory, connectionStatus }: Health
   const lastUpdate = bpmHistory.length ? bpmHistory[bpmHistory.length - 1].time : null;
 
   return (
-    <div className="px-6 py-6">
+    <div className="px-3 py-4 sm:px-6 sm:py-6">
       <h1 className="mb-1 text-3xl font-extrabold">Dashboard Kesehatan</h1>
       <p className="mb-6 text-sm text-app-subtext">
         Data sensor diterima real-time dari ESP32 (Pulse Sensor &amp; MPU6050) melalui topic uplink MQTT.

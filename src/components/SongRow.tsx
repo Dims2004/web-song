@@ -19,7 +19,7 @@ export function SongRow({ song, index, isActive, status, onSelect, onAttachAudio
   return (
     <div
       onClick={onSelect}
-      className={`group grid cursor-pointer grid-cols-[2rem_1fr_auto_auto_auto] items-center gap-4 rounded-md px-3 py-2 text-sm transition ${
+      className={`group grid cursor-pointer grid-cols-[2rem_1fr_auto_auto_auto] items-center gap-2 rounded-md px-2 py-2 text-sm transition sm:gap-4 sm:px-3 ${
         isActive ? 'bg-app-surface-3' : 'hover:bg-app-surface-2'
       }`}
     >
@@ -57,7 +57,7 @@ export function SongRow({ song, index, isActive, status, onSelect, onAttachAudio
               fileInputRef.current?.click();
             }}
             title="Pasang file audio lokal untuk lagu ini"
-            className="hidden items-center gap-1 rounded-full border border-app-border px-2 py-1 text-xs text-app-subtext hover:text-app-text group-hover:flex"
+            className="hidden items-center gap-1 rounded-full border border-app-border px-2 py-1 text-xs text-app-subtext hover:text-app-text sm:group-hover:flex"
           >
             <Upload size={12} />
             {song.audioUrl ? 'Ganti audio' : 'Pasang audio'}
